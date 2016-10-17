@@ -5,9 +5,24 @@ Write a function (problem1) that prints the numbers from 1 to 100.
 But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz".
 For numbers which are multiples of both three and five print "FizzBuzz".
 */
+"use strict";
 function problem1() {
     console.log("Hello, world!");
+    var num = 1;
+    while (num <101) {
+        if (num % 3 !== 0 && num % 5 !== 0) {
+            console.log(num);
+        } else if ( num % 3 === 0 && num % 5 === 0) {
+            console.log ("FizzBuzz");
+        } else if ( num % 5 === 0) {
+            console.log ("Buzz") ;
+        } else {
+            console.log ("Fizz");
+        }
+        num++;
+    }
 }
+
 
 
 /* Here is the situation for problems 2-5:
@@ -18,6 +33,9 @@ student records. It is damaged, and she needs your help to fix it!
 */
 
 // This is all that is left of the data!
+
+
+
 var students = [
     {
         name: 'Luis Naranjo',
@@ -63,6 +81,13 @@ Notes:
     * Your function should actually update the gpa values in the students array.
 */
 
+
+function problem2() {
+    students.forEach(function(students) {
+        students.gpa = Math.sqrt(students.gpa);
+        console.log(students.gpa + "");
+    }, this);
+}
 
 /* Problem #3 - map/filter/reduce practice
 
